@@ -1,0 +1,91 @@
+
+@HOST=http://localhost:3000/
+@TOKEN=admin
+
+### Login de usuario
+POST {{HOST}}users/usuarioLoguin HTTP/1.1
+Content-Type: application/json
+
+{
+	"usuario": "admin",
+	"pass": "123456"
+}
+
+###Alta de usuarios
+POST {{HOST}}users/usuarioAlta HTTP/1.1
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "apellido": "Invitado",
+  "nombre":"Invitado",
+  "pass": "123456",
+  "usuario": "guest",
+  "admin": true,
+  "id": 1,
+  "idrol": "60db9413e0aa31473599557b"
+}
+
+
+###Alta de rol
+POST {{HOST}}users/usuarioNuevoRol HTTP/1.1
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "nombre":"UsuarioPrueba",
+  "descripcion": "Rol general de usuario--",
+  "usuarios": ["guest"],
+  "app": [
+    {
+    "admin": " Administracion",
+    "rutas": {
+      "sucursalesNueva": "Nueva",
+      "usuarioAlta": "Alta"
+    },
+    "accion": {
+      "sucursalesDelete": "Borrar sucursal"
+    }
+    }
+  ],
+  "sigsucursales": ["PRIN"]
+}
+
+
+
+
+###Alta de sucursal
+POST {{HOST}}users/sucursalesNueva HTTP/1.1
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+	"provincia": "CABA",
+	"localidad": "CABA",
+	"calle": "Sin nombre",
+	"numerop": 0000,
+	"telefonos": [{"carac": 0000, "num": 000000}],
+	"celulares":  [],
+	"nombre": "			",
+	"rs": "RAZON SOCIAL",
+	"cuit": 0000000000000,
+	"iva": 0,
+	"siglas": "PRIN",
+	"bdmongo": "nil",
+	"bdmysql":  "prin",
+	"folder":  "prin",
+	"color":    "05DAC3",
+	"horarios": [{
+		"dias": ["lunes", "martes", "miercoles", "jueves", "viernes"],
+		"apertura": "08:00:00",
+		"cierre": "18:00:00"
+	},
+	{
+		"dias": ["sabados"],
+		"apertura": "10:00:00",
+		"cierre": "13:00:00"
+	}
+	],
+	"mail":      "",
+	"pventa":   1
+}

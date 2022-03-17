@@ -1,0 +1,47 @@
+{
+  "go.lintOnSave": "workspace",
+  "go.vetOnSave": "workspace",
+  "go.buildOnSave": "workspace",
+  "go.lintTool": "golangci-lint",
+  "go.formatTool": "goimports",
+  "go.lintFlags": [
+    "--enable=gocognit",
+    "--enable=golint",
+    "--enable=gosec",
+    "--exclude=G104",
+    "--enable=goimports",
+    "--exclude-use-default=false"
+  ],
+  "go.useLanguageServer": true,
+  "go.languageServerFlags": [
+    "-rpc.trace",
+    "serve",
+    "--debug=localhost:6060"
+  ],
+  "gopls": {
+      // Es obligatorio activar estas funciones
+      "usePlaceholders": true, //Obligatorio
+      "completeUninmported": true, //Obligatorio
+      "staticcheck": true //Obligatorio
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "go.coverOnSave": true,
+  "go.coverOnSingleTest": true,
+  "go.coverOnSingleTestFile": true,
+  "go.editorContextMenuCommands": {
+  "removeTags": true,
+  "fillStruct": true,
+  "testFile": true,
+  "testPackage": true,
+  "generateTestForFile": true,
+  "generateTestForPackage": true,
+  "benchmarkAtCursor": true
+  },
+  "go.testTimeout": "60s",
+  "go.gocodeFlags": [
+      "-builtin",
+      "-ignore-case",
+      "-unimported-packages",
+  ],
+  "go.coverShowCounts": true,
+}

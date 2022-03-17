@@ -1,0 +1,28 @@
+@HOST=http://localhost:3000
+
+###Eejmpo
+GET {{HOST}}/javier HTTP/1.1
+
+###Eejmpo Envio de datos
+POST {{HOST}}/javierEnvio HTTP/1.1
+Content-Type: "application/json"
+
+{
+    "nombre": "Javier",
+    "apellido": "Sanchez",
+    "numero_doc": 454545454
+}
+
+###Eejmpo de calculadors
+POST {{HOST}}/calcular HTTP/1.1
+Content-Type: "application/json"
+
+{
+    "num1": 2,
+    "num2": 2,
+    "op": "+"
+}
+
+###Eejmpo de calculadors
+POST {{HOST}}/calcular/8/2/* HTTP/1.1
+Content-Type: "application/json"

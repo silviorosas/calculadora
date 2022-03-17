@@ -1,0 +1,8 @@
+@HOST=http://localhost:3000
+
+###Eejmpo de Request Simple
+GET {{HOST}}/ejemplo HTTP/1.1
+
+
+###Eejmpo de Request Array
+GET {{HOST}}/ejemploArray HTTP/1.1
