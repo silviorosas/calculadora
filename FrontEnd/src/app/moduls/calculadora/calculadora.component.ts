@@ -45,8 +45,11 @@ export class CalculadoraComponent implements OnInit {
   }
 
   limpiar(){
-   let rest= this.datos.num1 - this.datos.num1 
-    console.log(rest);
+   this.datos.num1= 0;
+   this.datos.num2=0;
+   this.datos.op="";
+   this.res=0
+  
   }
 
   resultado(){
