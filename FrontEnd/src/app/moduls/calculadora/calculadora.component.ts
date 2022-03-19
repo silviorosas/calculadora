@@ -15,8 +15,10 @@ export class CalculadoraComponent implements OnInit {
     op: ""
   }; 
   
+  
 
   res: number | null | string = "";
+   historialOp: any[]=[];
 
   constructor(
     private calculadoraService: CalculadoraService
@@ -33,10 +35,7 @@ export class CalculadoraComponent implements OnInit {
       this.datos.num1 = numero
     }else{
       this.datos.num2 = numero
-    }
-   
-    
-   
+    } 
 
   }
 
@@ -50,6 +49,16 @@ export class CalculadoraComponent implements OnInit {
    this.datos.op="";
    this.res=0
   
+  }
+  
+
+  guardarRes(){
+    
+ 
+ this.historialOp.push( this.res)
+   
+  console.log(this.historialOp);
+    
   }
 
   resultado(){
@@ -77,5 +86,6 @@ export class CalculadoraComponent implements OnInit {
       }
     )
   }
+  
 
 }
