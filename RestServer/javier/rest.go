@@ -40,7 +40,6 @@ func calcularsin(w http.ResponseWriter, r *http.Request) {
 		resultado = num1 * num2
 	case "/":
 		resultado = num1 / num2
-	
 
 	default:
 		res.ErrSend("El operador no existe")
@@ -73,8 +72,6 @@ func calcular(w http.ResponseWriter, r *http.Request) {
 		resultado = datos.Numero1 * datos.Numero2
 	case "/":
 		resultado = datos.Numero1 / datos.Numero2
-		
-	
 
 	default:
 		res.ErrSend("El operador no existe")

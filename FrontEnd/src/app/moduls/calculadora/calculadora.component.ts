@@ -53,13 +53,11 @@ export class CalculadoraComponent implements OnInit {
   
 
   guardarRes(){
-    
- 
  this.historialOp.push( this.res)
    
-  console.log(this.historialOp);
-    
+  console.log(this.historialOp);    
   }
+  
 
   resultado(){
 

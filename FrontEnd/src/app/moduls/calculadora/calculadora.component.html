@@ -6,8 +6,8 @@
 
   <!--pantalla 1-->
 
-  <div class="card-body bg-info  " style="border-radius: 6px; height:38px;"><p *ngIf="datos.num1 > 0 && datos.num2 > 0 "> {{ datos.num1 }} {{ datos.op }} {{ datos.num2 }} </p></div>
-  <div class="card-body bg-info  " style="border-radius: 6px; height:38px; ;"><p *ngIf="datos.num1 != 0 && res != 0 ">  {{res}}</p> </div>
+  <div class="card-body bg-info  " style="border-radius: 6px; height:38px;"><p *ngIf="datos.num1 > 0 && datos.num2 > 0 "> {{ datos.num1 }} {{ datos.op }} {{ datos.num2 }} {{"="+res}}</p></div>
+  <div class="card-body bg-info  " style="border-radius: 6px; height:38px; ;"><p *ngIf="datos.num1 != 0 && res != 0 ">   {{"historial:"+historialOp}} </p> </div>
 <!--operadores-->
 <input style="border-radius: 8px;" class="btn btn-primary " type="button" value="+" (click)="ingresaroperacion('+')">
 <input class="btn btn-warning " style="margin: 4px; border-radius:8px"  type="button" value="-" (click)="ingresaroperacion('-')">
