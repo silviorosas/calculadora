@@ -6,8 +6,11 @@ import { StylesModule } from './styles.module'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { InterceptorService } from './interceptors/interceptor.service';
+
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import {CardModule} from 'primeng/card';
 
 
 
@@ -24,6 +27,9 @@ import { InterceptorService } from './interceptors/interceptor.service';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    InputTextModule,
+    ButtonModule,
+    CardModule
   ],
   providers: [
     {

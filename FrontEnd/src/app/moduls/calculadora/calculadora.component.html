@@ -1,42 +1,92 @@
-
+<!--Calculadora Bootstrap-->
 
 <div class="row justify-content-md-center align-items-center">
   <div class="card text-center" style="width: 14rem; ">
-<div class="card-body bg-secondary  " style="border-radius: 5px;" >
+    <div class="card-body bg-secondary  " style="border-radius: 5px;">
 
-  <!--pantalla 1-->
+      <!--pantalla 1-->
 
-  <div class="card-body bg-info  " style="border-radius: 6px; height:38px;"><p *ngIf="datos.num1 > 0 && datos.num2 > 0 "> {{ datos.num1 }} {{ datos.op }} {{ datos.num2 }} {{"="+res}}</p></div>
-  <div class="card-body bg-info  " style="border-radius: 6px; height:38px; ;"><p *ngIf="datos.num1 != 0 && res != 0 ">   {{"historial:"+historialOp}} </p> </div>
-<!--operadores-->
-<input style="border-radius: 8px;" class="btn btn-primary " type="button" value="+" (click)="ingresaroperacion('+')">
-<input class="btn btn-warning " style="margin: 4px; border-radius:8px"  type="button" value="-" (click)="ingresaroperacion('-')">
-<input style="border-radius: 8px;" class="btn btn-info " type="button" value="*" (click)="ingresaroperacion('*')">
-<input style="margin: 4px; border-radius:8px"  class="btn btn-success " type="button" value="/" (click)="ingresaroperacion('/')"><br>
-<!--numeros, igual, c y punto-->
-<input style="border-radius: 8px;" class="btn btn-dark " type="button" value="9" (click)="ingresarnumero(9)" >
-<input style="margin: 4px; border-radius:8px"  class="btn btn-dark " type="button" value="8" (click)="ingresarnumero(8)">
-<input style="border-radius: 8px;" class="btn btn-dark " type="button" value="7" (click)="ingresarnumero(7)"><br>
-<input style="border-radius: 8px;" class="btn btn-dark " type="button" value="4" (click)="ingresarnumero(4)">
-<input style="margin: 4px;  border-radius: 8px;"  class="btn btn-dark "type="button" value="5" (click)="ingresarnumero(5)">
-<input style="border-radius: 8px;" class="btn btn-dark " type="button" value="6" (click)="ingresarnumero(6)"><br>
-<input style="border-radius: 8px;" class="btn btn-dark " type="button" value="1" (click)="ingresarnumero(1)" >
-<input style="margin: 4px; border-radius:8px"  class="btn btn-dark " type="button" value="2" (click)="ingresarnumero(2)">
-<input style="border-radius: 8px;" class="btn btn-dark " type="button" value="3" (click)="ingresarnumero(3)"><br>
-<input style="border-radius: 8px;"  class="btn btn-dark " type="button" value="0" (click)="ingresarnumero(0)">
-<input style="margin: 4px; border-radius:8px"  class="btn btn-dark " type="button" value="M" (click)="guardarRes()" >
-<input style="border-radius:8px;" class="btn btn-dark " type="button" value="C" (click)="limpiar()">
-<input style="margin: 4px;border-radius:8px"  class="result btn btn-dark " type="button"  value="=" (click)="resultado()">
+      <div class="card-body bg-info  " style="border-radius: 6px; height:38px;">
+        <p *ngIf="datos.num1 > 0 && datos.num2 > 0 "> {{ datos.num1 }} {{ datos.op }} {{ datos.num2 }} {{"="+res}}</p>
+      </div>
+      <div class="card-body bg-info  " style="border-radius: 6px; height:38px; ;">
+        <p *ngIf="datos.num1 != 0 && res != 0 "> {{"historial:"+historialOp}} </p>
+      </div>
+      <!--operadores-->
+      <input style="border-radius: 8px;" class="btn btn-primary " type="button" value="+"
+        (click)="ingresaroperacion('+')">
+      <input class="btn btn-warning " style="margin: 4px; border-radius:8px" type="button" value="-"
+        (click)="ingresaroperacion('-')">
+      <input style="border-radius: 8px;" class="btn btn-info " type="button" value="*" (click)="ingresaroperacion('*')">
+      <input style="margin: 4px; border-radius:8px" class="btn btn-success " type="button" value="/"
+        (click)="ingresaroperacion('/')"><br>
+      <!--numeros, igual, c y m -->
+      <input style="border-radius: 8px;" class="btn btn-dark " type="button" value="9" (click)="ingresarnumero(9)">
+      <input style="margin: 4px; border-radius:8px" class="btn btn-dark " type="button" value="8"
+        (click)="ingresarnumero(8)">
+      <input style="border-radius: 8px;" class="btn btn-dark " type="button" value="7" (click)="ingresarnumero(7)"><br>
+      <input style="border-radius: 8px;" class="btn btn-dark " type="button" value="4" (click)="ingresarnumero(4)">
+      <input style="margin: 4px;  border-radius: 8px;" class="btn btn-dark " type="button" value="5"
+        (click)="ingresarnumero(5)">
+      <input style="border-radius: 8px;" class="btn btn-dark " type="button" value="6" (click)="ingresarnumero(6)"><br>
+      <input style="border-radius: 8px;" class="btn btn-dark " type="button" value="1" (click)="ingresarnumero(1)">
+      <input style="margin: 4px; border-radius:8px" class="btn btn-dark " type="button" value="2"
+        (click)="ingresarnumero(2)">
+      <input style="border-radius: 8px;" class="btn btn-dark " type="button" value="3" (click)="ingresarnumero(3)"><br>
+      <input style="border-radius: 8px;" class="btn btn-dark " type="button" value="0" (click)="ingresarnumero(0)">
+      <input style="margin: 4px; border-radius:8px" class="btn btn-dark " type="button" value="M"
+        (click)="guardarRes()">
+      <input style="border-radius:8px;" class="btn btn-dark " type="button" value="C" (click)="limpiar()">
+      <input style="margin: 4px;border-radius:8px" class="result btn btn-dark " type="button" value="="
+        (click)="resultado()">
 
+    </div>
+  </div>
 </div>
-</div>
-</div>  
 
-<!--falta agregar funcionalidad al punto y a la c, 
-  como tambien que se muestren los numeros tipeados en
-  la pantalla.
-  Cabe aclarar que use el proyecto de javier para poder conectar mi front de angular 
-  con el back que no enseñó javier, ya que estoy comenzando a comprender de a poco 
-  como el la conexion de go con angular. Por cierto me es mas familiar angular que go 
-  por ello lo del front no me costó tanto.
--->
+<hr>
+
+
+<!--Calculadora con PrimeNg-->
+<div class="row justify-content-md-center align-items-center">
+  <div class="card text-center" style="width: 18rem; ">
+    <div class="card" style="text-align:center">
+      <p-card header="Calculadora PrimeNg">
+        <div [ngStyle]="{backgroundColor:'var(--green-500)'}" style="padding: 25px; border-radius: 6px;">
+          <!--pantalla-->
+          <div class="card-body bg-info" style="border-radius: 6px; height:38px;">
+            <p *ngIf="datos.num1 > 0 && datos.num2 > 0 "> {{ datos.num1 }} {{ datos.op }} {{ datos.num2 }} {{"="+res}}
+            </p>
+          </div>
+          <div class="card-body bg-info " style="border-radius: 6px; height:38px; ;">
+            <p *ngIf="datos.num1 != 0 && res != 0 "> {{"historial:"+historialOp}} </p>
+          </div>
+          <!--Operadores-->
+          <input [ngStyle]="{backgroundColor:'var(--orange-300)'}" type="button" value=" - "
+            (click)="ingresaroperacion('-')" pInputText />
+          <input [ngStyle]="{backgroundColor:'var(--blue-300)'}" style="margin: 4px;" type="button" value=" + "
+            (click)="ingresaroperacion('+')" pInputText />
+          <input [ngStyle]="{backgroundColor:'var(--yellow-300)'}" type="button" value=" / "
+            (click)="ingresaroperacion('/')" pInputText />
+          <input [ngStyle]="{backgroundColor:'var(--indigo-300)'}" style="margin: 4px;" type="button" value=" * "
+            (click)="ingresaroperacion('*')" pInputText /><br>
+          <!--numeros, igual, c y m -->
+          <input type="button" value=" 9 " (click)="ingresarnumero(9)" style="margin-left: 4px;" pInputText />
+          <input style="margin: 4px;" type="button" value=" 8 " (click)="ingresarnumero(8)" pInputText />
+          <input type="button" value=" 7 " (click)="ingresarnumero(7)" pInputText /><br>
+          <input type="button" value=" 4 " (click)="ingresarnumero(4)" style="margin-left: 4px; margin: 4px;"
+            pInputText />
+          <input type="button" value=" 5 " (click)="ingresarnumero(5)" pInputText />
+          <input style="margin: 4px;" type="button" value=" 6 " (click)="ingresarnumero(6)" pInputText /><br>
+          <input type="button" value=" 1 " style="margin-left: 4px;" (click)="ingresarnumero(1)" pInputText />
+          <input style="margin: 4px;" type="button" value=" 2 " (click)="ingresarnumero(2)" pInputText />
+          <input type="button" value=" 3 " (click)="ingresarnumero(3)" pInputText /><br>
+          <input style="margin: 4px;" type="button" value="0" (click)="ingresarnumero(0)" pInputText />
+          <input type="button" value="M" (click)="guardarRes()" pInputText />
+          <input style="margin: 4px;" type="button" value="C" (click)="limpiar()" pInputText />
+          <input type="button" value=" = " (click)="resultado()" pInputText />
+
+        </div>
+      </p-card>
+    </div>
+  </div>
